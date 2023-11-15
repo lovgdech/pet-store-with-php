@@ -1,0 +1,13 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.fa-solid {
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}

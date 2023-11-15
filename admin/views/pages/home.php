@@ -3,11 +3,11 @@
 
     <div class="container-lg">
         <div class="row my-4">
-            <a href="?controller=dogs" class="col-4 col-md-2 text-decoration-none cursor-pointer">
+            <a href="index.php?controller=dogs" class="col-4 col-md-2 text-decoration-none cursor-pointer">
                 <img class="w-100" src="public/images/img_slider_home_circle_1.png" alt="" />
                 <p class="text-center text-black py-1 fs-5 fw-bold">Dành cho chó</p>
             </a>
-            <a href="#" class="col-4 col-md-2 text-decoration-none cursor-pointer">
+            <a href="index.php?controller=cats" class="col-4 col-md-2 text-decoration-none cursor-pointer">
                 <img class="w-100" src="public/images/img_slider_home_circle_2.png" alt="" />
                 <p class="text-center text-black py-1 fs-5 fw-bold">Dành cho mèo</p>
             </a>
@@ -30,7 +30,7 @@
         </div>
 
         <section>
-            <h3 class="text-center py-4 fs-4 fw-bold">ĐỒ CHẢNH CÚN Đề xuất</h3>
+            <h3 class="text-center py-4 fs-4 fw-bold text-uppercase">Đề xuất</h3>
         </section>
 
         <div class="w-100 d-flex">
@@ -90,13 +90,14 @@
         </section>
 
         <section>
-            <h3 class="text-center py-4 fs-4 fw-bold">ĐỒ CHẢNH CÚN OUTLET</h3>
+            <h3 class="text-center py-4 fs-4 fw-bold">OUTLET</h3>
 
         </section>
-        <section class="row my-4">
+
+        <section>
             <h3 class="text-center py-4 fs-4 fw-bold text-uppercase">Quẹo lựa nhanh nè</h3>
-            <div class="w-100 row my-4">
-                <a href="?controller=dogs" class="col-4 col-md-2 text-decoration-none cursor-pointer">
+            <div class="row my-4">
+                <a href="#" class="col-4 col-md-2 text-decoration-none cursor-pointer">
                     <img class="w-100" src="public/images/item_image_1.jpg" alt="" />
                     <p class="text-center text-black py-1 fs-6 fw-bold">Hiệu thuốc Online</p>
                 </a>
@@ -144,28 +145,6 @@
                     <img class="w-100" src="public/images/item_image_12.jpg" alt="" />
                     <p class="text-center text-black py-1 fs-6 fw-bold">Bán thêm cho vui</p>
                 </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </section>
     </div>

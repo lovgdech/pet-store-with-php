@@ -4,12 +4,10 @@
         phút!</p>
 
     <div class="container-lg d-flex justify-content-between align-items-center py-3 gap-5" style="height: 80px;">
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars fs-4"></i>
         </button>
-        <div class="offcanvas offcanvas-end  d-lg-none" tabindex="-1" id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end  d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DANH MỤC |
                     MENU</h5>
@@ -18,12 +16,11 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="#">SHOP
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">SHOP
                             BY BRAND</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a data-bs-toggle="collapse" href="#collapseCat" role="button" aria-expanded="false"
-                            aria-controls="collapseCat" class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
+                        <a href="index.php?controller=cats" data-bs-toggle=" collapse" role="button" aria-expanded="false" aria-controls="collapseCat" class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
                             MÈO | CAT
                         </a>
                         <ul class="collapse" id="collapseCat">
@@ -34,8 +31,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a data-bs-toggle="collapse" href="#collapseDog" role="button" aria-expanded="false"
-                            aria-controls="collapseDog" class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
+                        <a data-bs-toggle="collapse" href="index.php?controller=cats" role="button" aria-expanded="false" aria-controls="collapseDog" class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
                             CHÓ | DOG
                         </a>
                         <ul class="collapse" id="collapseDog">
@@ -46,9 +42,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a data-bs-toggle="collapse" href="#collapseSmallPet" role="button" aria-expanded="false"
-                            aria-controls="collapseSmallPet"
-                            class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
+                        <a data-bs-toggle="collapse" href="#collapseSmallPet" role="button" aria-expanded="false" aria-controls="collapseSmallPet" class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
                             THÚ NHỎ | SMALL PET
                         </a>
                         <ul class="collapse" id="collapseSmallPet">
@@ -79,8 +73,7 @@
 
         <form class="flex-grow-1 h-100 d-none d-lg-flex" role="search">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-            <button style="width: 48px;" class="btn btn-danger" type="submit"><i
-                    class="fa-solid fa-magnifying-glass"></i></button>
+            <button style="width: 48px;" class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
         <div class="d-flex gap-1">
@@ -105,8 +98,7 @@
 
     <form class="container-lg w-100 d-flex d-lg-none" role="search">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-        <button style="width: 48px;" class="btn btn-danger" type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i></button>
+        <button style="width: 48px;" class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
     <nav class="container-lg navbar navbar-expand-lg">
@@ -114,12 +106,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item">
-                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="#">SHOP
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">SHOP
                             BY BRAND</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="index.php?controller=cats" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             MÈO | CAT
                         </a>
                         <ul class="dropdown-menu">
@@ -132,8 +123,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="index.php?controller=dogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             CHÓ | DOG
                         </a>
                         <ul class="dropdown-menu">
@@ -146,8 +136,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             THÚ NHỎ | SMALL PET
                         </a>
                         <ul class="dropdown-menu">
