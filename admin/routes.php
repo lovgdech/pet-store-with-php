@@ -1,19 +1,17 @@
 <?php
-
 $controllers = array(
-    'pages' => ['home', 'error'],
-    'dogs' => ['index', 'details'],
-    'cats' => ['index', 'details'],
+    'home' => ['index'],
+    'accounts' => ['index', 'add_account', 'add_account_submit', 'edit_account', 'edit_account_submit', 'delete_account'],
 );
 
-if (!array_key_exists('pages', $controllers) || !in_array($action, $controllers[$controller])) {
-    $controller = 'pages';
+if (!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {
+    $controller = 'home';
     $action = 'error';
 }
 
-require_once 'controllers/' . $controller . '_controller.php';
+include_once('controllers/' . $controller . '_controller.php');
 
-$classController = ucwords($controller) . 'Controller';
+$klass = str_replace('_', '', ucwords($controller, '_')) . 'Controller';
+$controller = new $klass;
 
-$controller = new $classController;
 $controller->$action();
