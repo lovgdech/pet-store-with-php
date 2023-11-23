@@ -46,10 +46,12 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Hành động</h6>
-                <a class="collapse-item" href="utilities-color.php">Colors</a>
-                <a class="collapse-item" href="utilities-border.php">Borders</a>
-                <a class="collapse-item" href="utilities-animation.php">Animations</a>
-                <a class="collapse-item" href="utilities-other.php">Other</a>
+                <a class="collapse-item" href="index.php?controller=products">Danh sách sản phẩm</a>
+                <a class="collapse-item" href="index.php?controller=product_groups">Danh sách nhóm
+                    sản phẩm</a>
+                <a class="collapse-item" href="index.php?controller=products&action=add_product">Thêm sản phẩm</a>
+                <a class="collapse-item" href="index.php?controller=product_groups&action=add_product_group">Thêm nhóm
+                    sản phẩm</a>
             </div>
         </div>
     </li>

@@ -4,7 +4,7 @@ $controllers = array(
     'pages' => ['home', 'error'],
     'dogs' => ['index', 'details'],
     'cats' => ['index', 'details'],
-    'auths' => ['index', 'login', 'register'],
+    'auths' => ['index', 'login', 'logout', 'register'],
 );
 
 if (!array_key_exists('pages', $controllers) || !in_array($action, $controllers[$controller])) {

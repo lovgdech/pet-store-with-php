@@ -2,7 +2,6 @@
 require_once 'base_controller.php';
 require_once 'models/authentication.php';
 
-
 class AuthsController extends BaseController
 {
     public static $user = null;
@@ -44,10 +43,14 @@ class AuthsController extends BaseController
 
             $user = new Authentication($id, $username, $email, $password);
 
-            // $result = $user->insert();
-
             return $this->index();
         }
+    }
+
+    public function logout()
+    {
+        self::$user = null;
+        return $this->render('home');
     }
 
     // public function edit_account()

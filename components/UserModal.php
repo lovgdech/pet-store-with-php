@@ -9,6 +9,6 @@
 
     <div class="dropdown-menu p-4" style="width: 600px;">
         <!-- account -->
-        <button>Đăng xuất</button>
+        <a href="index.php?controller=auths&action=logout">Đăng xuất</a>
     </div>
 </div>
