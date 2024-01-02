@@ -9,6 +9,7 @@
                 <th scope="col">Tên sản phẩm</th>
                 <th scope="col">Tiêu đề</th>
                 <th scope="col">Chi tiết</th>
+                <th scope="col">Hình ảnh</th>
                 <th scope="col">Giá</th>
                 <th scope="col">Số lượng</th>
                 <th scope="col">Ghi chú</th>
@@ -26,8 +27,9 @@
                     <td>' . $v->productGroupName . '</td>
                     <td>' . $v->productId . '</td>
                     <td>' . $v->name . '</td>
-                    <td>' . $v->title . '</td>
-                    <td>' . $v->description . '</td>
+                    <td><p style="width: 150px; height: 200px; overflow: hidden; text-overflow: ellipsis; white-space: pre;">' . $v->title . '</p></td>
+                    <td><p style="width: 150px; height: 200px; overflow: hidden; text-overflow: ellipsis; white-space: pre;">' . $v->description . '</p></td>
+                    <td><img width="120" src="assets/uploads/' . $v->image . '" /></td>
                     <td>' . $v->price . '</td>
                     <td>' . $v->quanlity . '</td>
                     <td>' . $v->note . '</td>

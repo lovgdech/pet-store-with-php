@@ -12,34 +12,23 @@
                     27/02/2019. Đại diện: Thạch Minh Tâm
                 </p>
 
-                <img class="mb-4"
-                    width="200"
-                    src="https://theme.hstatic.net/1000356051/1001056962/14/logo_bct.jpg?v=275"
-                    alt />
+                <img class="mb-4" width="200"
+                    src="https://theme.hstatic.net/1000356051/1001056962/14/logo_bct.jpg?v=275" alt />
 
-                <div class="btn-toolbar" role="toolbar"
-                    aria-label="Toolbar with button groups">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group me-2 gap-2" role="group">
-                        <button type="button"
-                            class="btn btn-secondary d-flex align-items-center justify-content-center"
+                        <button type="button" class="btn btn-secondary d-flex align-items-center justify-content-center"
                             style="border-radius: 50%; height: 40px;
-                            width: 40px"><i
-                                class="fa-brands fa-facebook"></i></button>
-                        <button type="button"
-                            class="btn btn-secondary d-flex align-items-center justify-content-center"
+                            width: 40px"><i class="fa-brands fa-facebook"></i></button>
+                        <button type="button" class="btn btn-secondary d-flex align-items-center justify-content-center"
                             style="border-radius: 50%; height: 40px;
-                            width: 40px"><i
-                                class="fa-brands fa-youtube"></i></button>
-                        <button type="button"
-                            class="btn btn-secondary d-flex align-items-center justify-content-center"
+                            width: 40px"><i class="fa-brands fa-youtube"></i></button>
+                        <button type="button" class="btn btn-secondary d-flex align-items-center justify-content-center"
                             style="border-radius: 50%; height: 40px;
-                            width: 40px"><i
-                                class="fa-brands fa-instagram"></i></button>
-                        <button type="button"
-                            class="btn btn-secondary d-flex align-items-center justify-content-center"
+                            width: 40px"><i class="fa-brands fa-instagram"></i></button>
+                        <button type="button" class="btn btn-secondary d-flex align-items-center justify-content-center"
                             style="border-radius: 50%; height: 40px;
-                            width: 40px"><i
-                                class="fa-brands fa-x-twitter"></i></button>
+                            width: 40px"><i class="fa-brands fa-x-twitter"></i></button>
                     </div>
                 </div>
             </div>
@@ -133,14 +122,11 @@
 
             <div class="col-lg-3 col-md-6">
                 <h3 class="my-3 fs-4">Fanpage</h3>
-                <img class="w-100 mb-4"
-                    alt
+                <img class="w-100 mb-4" alt
                     src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/334674063_184955604239543_3829518219076107631_n.png?stp=dst-png_p206x206&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEYkWpqKKertNFnJxXXo11L-1ctwpzJ02j7Vy3CnMnTaMPMnbirbXfzwdTHLrrXMqrODza0rtyTfH52c5nVy_EE&_nc_ohc=bmoZpIkdfH4AX-7X06A&_nc_ht=scontent.fhan14-2.fna&oh=00_AfDw0yjBnszlQpLm6ZBykNKA29HNIJvjp0y7vR87NZSUsA&oe=6557F474" />
-                <img class="w-100 mb-4"
-                    alt
+                <img class="w-100 mb-4" alt
                     src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/309200098_188166263739869_301917195656713441_n.jpg?stp=dst-jpg_s526x296&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHeUvJny1BQ6fpx505EZyQHHH2ZTWW0j6gcfZlNZbSPqPeWV8LGRbSKAYxgmkVm5QT0GaNcA-I4URgD6I2Bcot3&_nc_ohc=4gucNxPo7WUAX86tOSO&_nc_ht=scontent.fhan14-2.fna&oh=00_AfCGyyOpkslGLMfmZ5jJkUrPvenKtSgnyqAPjW20RE5gnw&oe=6557B42C" />
-                <img class="w-100 mb-4"
-                    alt
+                <img class="w-100 mb-4" alt
                     src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/356373371_638466971642696_6487395064445962787_n.jpg?stp=dst-jpg_p370x247&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF_l9yubwLgZTm_sCv0TaTJCA6i7LcHIIAIDqLstwcggH3XDodXjNGUltst7_IeBbxtsNzlcQn1WbGinlOQnqRC&_nc_ohc=uCvq3Rbs8LoAX_zmrRl&_nc_ht=scontent.fhan14-1.fna&oh=00_AfBXrlh1dM6fQD38i48zv4ytQL7Ix9riZFVgQeOyQcH81w&oe=65583210" />
             </div>
         </div>

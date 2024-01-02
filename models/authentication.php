@@ -28,11 +28,23 @@ class Authentication
         return $account;
     }
 
+    static function get_by_email($email)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare("SELECT  id, username, email, password, enable FROM `mega_accounts` WHERE email = :email ORDER BY id");
+        $req->execute(['id' => $email]);
+        $item = $req->fetch();
+        if (isset($item['id']))
+            $account = new Authentication($item['id'], $item['username'], $item['email'], $item['password']);
+
+        return $account;
+    }
+
     function insert()
     {
         $db = DB::getInstance();
         $req = $db->exec("INSERT INTO `mega_accounts` (`id`, `username`, `email`, `password`, `enable`)  
-        VALUES ('$this->id', '$this->username', '$this->email','$this->password')");
+        VALUES ('$this->id', '$this->username', '$this->email','$this->password', 1)");
 
         return $req;
     }

@@ -9,6 +9,11 @@
     overflow-y: auto;
 }
 
+.imgStyle {
+    width: 30px;
+    object-fit: contain;
+}
+
 .sidebar-customs::-webkit-scrollbar {
     width: 10px;
     height: 10px;

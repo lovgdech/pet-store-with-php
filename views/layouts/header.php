@@ -18,49 +18,16 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">SHOP
-                            BY BRAND</a>
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">HOME</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="index.php?controller=cats" data-bs-toggle=" collapse" role="button"
-                            aria-expanded="false" aria-controls="collapseCat"
-                            class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
-                            MÈO | CAT
-                        </a>
-                        <ul class="collapse" id="collapseCat">
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Another action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Something else
-                                    here</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page"
+                            href="index.php?controller=dogs">FOR DOGS</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a data-bs-toggle="collapse" href="index.php?controller=cats" role="button"
-                            aria-expanded="false" aria-controls="collapseDog"
-                            class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
-                            CHÓ | DOG
-                        </a>
-                        <ul class="collapse" id="collapseDog">
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Another action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Something else
-                                    here</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page"
+                            href="index.php?controller=cats">FOR CATS</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a data-bs-toggle="collapse" href="#collapseSmallPet" role="button" aria-expanded="false"
-                            aria-controls="collapseSmallPet"
-                            class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle">
-                            THÚ NHỎ | SMALL PET
-                        </a>
-                        <ul class="collapse" id="collapseSmallPet">
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Another action</a></li>
-                            <li><a class="nav-link px-0 text-black fw-normal fs-6" href="#">Something else
-                                    here</a></li>
-                        </ul>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link px-0 text-black fw-normal fs-6" href="#">TODAY'S
                             DEALS</a>
@@ -87,10 +54,13 @@
 
         <div class="d-flex gap-1 align-items-center" style="height: 50px;">
             <?php
-            if (isset(AuthsController::$user)) {
+            if (isset($_SESSION['user'])) {
                 require_once 'components/UserModal.php';
             } else {
-                require_once 'components/LoginButtonModal.php';
+                echo "  <a href='index.php?controller=auths' class='d-flex gap-2 align-items-center text-dark text-decoration-none'>
+                            <i class='bi bi-person-circle fs-4'></i>
+                            <p class='fs-6 mb-0 d-none d-lg-block'>Đăng nhập</p>
+                        </a>";
             }
             ?>
             <div class="dropdown h-100">
@@ -98,11 +68,20 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <p class="fs-6 mb-0 d-none d-lg-block">Giỏ hàng</p>
+                    <div class="cartQuanlity_customs">
+                        <?php
+                        if (isset($_SESSION['user']) && isset($_SESSION['cart'])) {
+                            echo ($_SESSION['cart']['totalQuantity']);
+                        } else {
+                            echo 0;
+                        }
+                        ?>
+                    </div>
                 </button>
 
-                <div class="dropdown-menu p-4" style="width: 600px;">
-                    <!-- cart  -->
-                </div>
+                <?php
+                require_once 'components/CartModal.php';
+                ?>
             </div>
         </div>
     </div>
@@ -119,52 +98,15 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item">
-                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">SHOP
-                            BY BRAND</a>
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page" href="index.php">HOME</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle"
-                            href="index.php?controller=cats" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            MÈO | CAT
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another
-                                    action</a></li>
-                            <li><a class="dropdown-item" href="#">Something
-                                    else
-                                    here</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page"
+                            href="index.php?controller=dogs">FOR DOGS</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle"
-                            href="index.php?controller=dogs" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            CHÓ | DOG
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another
-                                    action</a></li>
-                            <li><a class="dropdown-item" href="#">Something
-                                    else
-                                    here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link px-0 text-black fw-normal fs-6 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            THÚ NHỎ | SMALL PET
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another
-                                    action</a></li>
-                            <li><a class="dropdown-item" href="#">Something
-                                    else
-                                    here</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-black fw-normal fs-6" aria-current="page"
+                            href="index.php?controller=cats">FOR CATS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-0 text-black fw-normal fs-6" href="#">TODAY'S
@@ -182,3 +124,19 @@
         </div>
     </nav>
 </header>
+
+<style>
+.cartQuanlity_customs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+</style>

@@ -35,6 +35,20 @@ class ProductsController extends BaseController
         $this->render('product_ins', $data);
     }
 
+    public function submit_image($product)
+    {
+        $target_dir = "assets/uploads/";
+        $file_name = time() . "_" . basename($_FILES["image"]["name"]);
+        $target_file = $target_dir . $file_name;
+
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            $product->update_image($file_name);
+            return true;
+        }
+        return false;
+    }
+
     public function add_product_submit()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,15 +58,18 @@ class ProductsController extends BaseController
             $name = $_POST['name'] ? $_POST['name'] : '';
             $title = $_POST['title'] ? $_POST['title'] : '';
             $description = $_POST['description'] ? $_POST['description'] : '';
+            $image = '';
             $price = $_POST['price'] ? $_POST['price'] : '';
             $quanlity = $_POST['quanlity'] ? $_POST['quanlity'] : '';
             $note = $_POST['note'] ? $_POST['note'] : '';
             $enable = isset($_POST['enable']) ? $_POST['enable'] : 0;
 
+
             $newProduct =
-                new Product($id, $productId, $productGroupId, $name, $title, $description, $price, $quanlity, $note, $enable);
+                new Product($id, $productId, $productGroupId, $name, $title, $description, $image, $price, $quanlity, $note, $enable);
 
             $result = $newProduct->insert();
+            ProductsController::submit_image($newProduct);
 
             return $this->index();
         }
@@ -81,15 +98,23 @@ class ProductsController extends BaseController
             $name = $_POST['name'] ? $_POST['name'] : '';
             $title = $_POST['title'] ? $_POST['title'] : '';
             $description = $_POST['description'] ? $_POST['description'] : '';
+            $image = '';
             $price = $_POST['price'] ? $_POST['price'] : '';
             $quanlity = $_POST['quanlity'] ? $_POST['quanlity'] : '';
             $note = $_POST['note'] ? $_POST['note'] : '';
             $enable = isset($_POST['enable']) ? $_POST['enable'] : 0;
 
             $oldProduct =
-                new Product($id, $productId, $productGroupId, $name, $title, $description, $price, $quanlity, $note, $enable);
+                new Product($id, $productId, $productGroupId, $name, $title, $description, $image, $price, $quanlity, $note, $enable);
 
-            $oldProduct->update($id);
+            $oldProduct->update();
+
+            $product = Product::get_by_id($id);
+            $oldImage = $product->image;
+
+            if (ProductsController::submit_image($oldProduct)) {
+                unlink("assets/uploads/" . $oldImage);
+            }
 
             $this->index();
         }

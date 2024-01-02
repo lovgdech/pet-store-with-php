@@ -1,19 +1,19 @@
 <?php
 require_once 'base_controller.php';
 require_once 'models/authentication.php';
+require_once 'models/cart.php';
+require_once 'pages_controller.php';
 
 class AuthsController extends BaseController
 {
-    public static $user = null;
-
     public function __construct()
     {
-        $this->folder = 'pages';
+        $this->folder = 'auths';
     }
 
     public function index()
     {
-        $this->login();
+        $this->render('index');
     }
 
     public function login()
@@ -23,17 +23,41 @@ class AuthsController extends BaseController
             $password = $_POST['password'] ? $_POST['password'] : '';
 
             if (!empty($email) && !empty($password)) {
-                self::$user = Authentication::check_auth($email, $password);
-                if (!isset(self::$user)) {
+                $user = Authentication::check_auth($email, $password);
+                if (!isset($user)) {
                     echo '<script>alert("Error login, please login again!")</script>';
+                    return $this->render('index');
                 }
             }
 
+            session_start();
+
+            $_SESSION['user'] = array(
+                "id" => $user->id,
+                "username" => $user->username,
+                "email" => $user->email
+            );
+
+            if (!isset($_SESSION['cart'])) {
+                $cart = Cart::get_cart();
+
+                $_SESSION['cart'] = $cart;
+            }
+
+            echo '<script>alert("Đăng nhập thành công!")</script>';
+            $this->folder = 'pages';
+            $controller = new PagesController();
+            $controller->home();
             return $this->render('home');
         }
     }
 
     public function register()
+    {
+        $this->render('register');
+    }
+
+    public function register_submit()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = time();
@@ -42,14 +66,26 @@ class AuthsController extends BaseController
             $password = $_POST['password'] ? $_POST['password'] : '';
 
             $user = new Authentication($id, $username, $email, $password);
+            $result = $user->insert();
 
+            if (!$result) {
+                echo '<script>alert("Đăng ký không thành công! Vui lòng điền lại thông tin")</script>';
+                return $this->register();
+            }
+            echo '<script>alert("Đăng ký thành công! Quay lại đăng nhập")</script>';
             return $this->index();
         }
     }
 
     public function logout()
     {
-        self::$user = null;
+        session_start();
+        session_unset();
+        session_destroy();
+        echo '<script>alert("Đăng xuất thành công!")</script>';
+        $this->folder = 'pages';
+        $controller = new PagesController();
+        $controller->home();
         return $this->render('home');
     }
 

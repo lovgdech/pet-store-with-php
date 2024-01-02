@@ -64,7 +64,7 @@
 
 
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="charts.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
@@ -74,6 +74,12 @@
         <a class="nav-link" href="tables.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
+    </li> -->
+
+    <li class="nav-item">
+        <a class="nav-link" href="../index.php">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Trang bán hàng</span></a>
     </li>
 
     <hr class="sidebar-divider d-none d-md-block">

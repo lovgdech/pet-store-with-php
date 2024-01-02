@@ -1,5 +1,5 @@
 <?php
-require_once('config/connectDb.php');
+require_once('config/connection.php');
 
 class Product
 {
@@ -42,11 +42,18 @@ class Product
         $this->enable = $enable;
     }
 
-    static function get_all()
+    static function get_all($mode)
     {
         $list = [];
         $db = DB::getInstance();
         $req = $db->query("SELECT * FROM `mega_products` ORDER BY id");
+        if ($mode == 1) {
+            $req = $db->query("SELECT * FROM `mega_products` WHERE product_group_id = 'pg_001' ORDER BY id");
+        }
+
+        if ($mode == 2) {
+            $req = $db->query("SELECT * FROM `mega_products` WHERE product_group_id = 'pg_002' ORDER BY id");
+        }
 
         foreach ($req->fetchAll() as $item) {
             $list[] = new Product($item['id'], $item['product_id'], $item['product_group_id'], $item['name'], $item['title'], $item['description'], $item['image'], $item['price'], $item['quanlity'], $item['note'], $item['enable']);
@@ -65,36 +72,5 @@ class Product
             $product = new Product($item['id'], $item['product_id'], $item['product_group_id'], $item['name'], $item['title'], $item['description'], $item['image'], $item['price'], $item['quanlity'], $item['note'], $item['enable']);
 
         return $product;
-    }
-
-    function insert()
-    {
-        $db = DB::getInstance();
-        $req = $db->exec("INSERT INTO `mega_products`(`id`, `product_id`, `product_group_id`, `name`, `title`, `description`, `price`, `quanlity`, `enable`, `note`) VALUES ('$this->id','$this->productId','$this->productGroupId','$this->name','$this->title','$this->description','$this->price','$this->quanlity','$this->enable','$this->note')");
-
-        return $req;
-    }
-
-    static function delete($id)
-    {
-        $db = DB::getInstance();
-        $req = $db->exec("DELETE FROM `mega_products` WHERE id = '$id'");
-
-        return $req;
-    }
-
-    function update()
-    {
-        $db = DB::getInstance();
-        $req = $db->exec("UPDATE `mega_products` SET `product_id`='$this->productId',`product_group_id`='$this->productGroupId',`name`='$this->name',`title`='$this->title',`description`='$this->description',`price`='$this->price',`quanlity`='$this->quanlity',`enable`='$this->enable',`note`='$this->note' WHERE `id`='$this->id'");
-
-        return $req;
-    }
-
-    function update_image($file_name)
-    {
-        $db = DB::getInstance();
-        $req = $db->exec("UPDATE `mega_products` SET `image`='$file_name' WHERE `id` = '$this->id'");
-        return $req;
     }
 }

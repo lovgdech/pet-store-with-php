@@ -29,8 +29,28 @@
             </a>
         </div>
 
-        <section>
+        <section class="my-4 recommend">
             <h3 class="text-center py-4 fs-4 fw-bold text-uppercase">Đề xuất</h3>
+            <div class="row_customs">
+                <?php
+                foreach ($products as $key => $val) {
+                    $type = "dogs";
+                    if ($val->productGroupId == "pg_002")
+                        $type = "cats";
+
+                    echo '
+                        <a href="index.php?controller=' . $type . '&action=details&id=' . $val->id . '" class="text-black text-decoration-none shadow rounded px-2 col_customs">
+                            <img class="mb-2" style="height: 180px; width: auto; objec-fit: cover;" src="admin/assets/uploads/' . $val->image . '" />
+                            <h4
+                                class="title_customs">
+                                ' . $val->title . '
+                            </h4>
+                            <p class="fs-6 fw-bold">' . $val->price . '$</p>
+                        </a>
+                    ';
+                }
+                ?>
+            </div>
         </section>
 
         <div class="w-100 d-flex">
@@ -89,10 +109,102 @@
             </div>
         </section>
 
-        <section>
+        <section class="outlet">
             <h3 class="text-center py-4 fs-4 fw-bold">OUTLET</h3>
+            <div class="row_customs">
+                <?php
+                foreach ($data["products"] as $key => $val) {
+                    $type = "dogs";
+                    $oldPrice = $val->price * 1.1;
+                    if ($val->productGroupId == "pg_002")
+                        $type = "cats";
 
+                    echo '
+                        <a href="index.php?controller=' . $type . '&action=details&id=' . $val->id . '" class="d-flex gap-3 text-black text-decoration-none shadow rounded px-2 col_customs">
+                            <img class="mb-2" style="height: 80px; width: 80px; objec-fit: cover;" src="admin/assets/uploads/' . $val->image . '" />
+                            <div>
+                                <h4
+                                class="title_customs">
+                                ' . $val->title . '
+                                </h4>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <p class="fs-6 fw-bold text-danger">' . $val->price . '$</p>
+                                    <p class="oldPrice_customs">' . $oldPrice . '$</p>
+                                </div>
+                            </div>
+                        </a>
+                    ';
+                }
+                ?>
+            </div>
         </section>
+
+        <style>
+            .row_customs {
+                background-color: inherit;
+                width: 100%;
+                display: grid;
+                padding: 20px 10px;
+                gap: 12px;
+                cursor: pointer;
+                grid-template-columns: repeat(6, auto);
+                overflow: hidden;
+            }
+
+            .outlet .row_customs {
+                grid-template-columns: repeat(4, auto);
+            }
+
+            .col_customs:hover {
+                transform: translateY(-5px);
+            }
+
+            .title_customs {
+                width: 100%;
+                font-size: 16px;
+                white-space: initial;
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+            }
+
+            .oldPrice_customs {
+                font-size: 12px;
+                color: gray;
+                font-weight: normal;
+                text-decoration: line-through;
+            }
+
+            .outlet .title_customs {
+                font-weight: normal;
+                font-size: 15px;
+            }
+
+            @media only screen and (max-width: 1400px) {
+                .recommend .row_customs {
+                    grid-template-columns: repeat(5, auto);
+                }
+            }
+
+            @media only screen and (max-width: 1200px) {
+                .recommend .row_customs {
+                    grid-template-columns: repeat(4, auto);
+                }
+            }
+
+            @media only screen and (max-width: 856px) {
+                .recommend .row_customs {
+                    grid-template-columns: repeat(3, auto);
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                .recommend .row_customs {
+                    grid-template-columns: repeat(2, auto);
+                }
+            }
+        </style>
 
         <section>
             <h3 class="text-center py-4 fs-4 fw-bold text-uppercase">Quẹo lựa nhanh nè</h3>

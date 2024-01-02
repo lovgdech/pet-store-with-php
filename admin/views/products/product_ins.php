@@ -1,6 +1,7 @@
 <div class="p-4 mx-auto w-100" style="max-width: 1000px;">
     <h3 class="text-center text-black fw-bold">Thêm sản phẩm</h3>
-    <form class="my-4 w-100" action="index.php?controller=products&action=add_product_submit" method="POST">
+    <form class="my-4 w-100" action="index.php?controller=products&action=add_product_submit" method="POST"
+        enctype="multipart/form-data">
         <div class="mb-3 mt-3 d-flex gap-2" style="gap: 50px;">
             <div style="flex: 1;">
                 <label for="productId" class="form-label">Mã sản phẩm:</label>
@@ -31,6 +32,10 @@
         <div class="mb-3 mt-3">
             <label for="description" class="form-label d-block">Chi tiết sản phẩm:</label>
             <textarea class="w-100 p-2" name="description" rows="4" cols="50"></textarea>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="image" class="form-label">Hình ảnh sản phẩm:</label>
+            <input type="file" class="form-control" id="image" name="image">
         </div>
         <div class="mb-3 d-flex gap-2" style="gap: 50px;">
             <div class="flex-item flex-grow-1">
