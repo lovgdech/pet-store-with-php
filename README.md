@@ -1,4 +1,5 @@
 AuthController
+```
 <?php
 require_once('controllers/base_controller.php');
 require_once('controllers/home_controller.php');
@@ -129,9 +130,10 @@ class AuthController extends BaseController
         $this->render('error');
     }
 }
-
+```
 
 AuthModel
+```
 <?php
 require_once('config/connectDatabase.php');
 
@@ -213,3 +215,4 @@ class Authentication
         return ['status' => 'success', 'content' => "Create an account successfuly!", 'user' => $req];
     }
 }
+```
